@@ -1,10 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Login from '../lib/Login.svelte';
+	import { onMount } from 'svelte';
 
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+	let data: object[] = [],
+		picture: object[] = [];
 
-<style lang="postcss">
-	:global(html) {
-		background-color: theme(colors.gray.100);
-	}
-</style>
+	onMount(async function fetchUserData() {
+		const res = await fetch('https://jsonplaceholder.typicode.com/users');
+		data = await res.json();
+	});
+</script>
+
+<Login userData={data} />
