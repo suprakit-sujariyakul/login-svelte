@@ -13,7 +13,7 @@
 				return;
 			}
 		}
-		alert('Wrong username or password');
+		alert('Invalid username or password');
 	}
 
 	function handleLogout() {

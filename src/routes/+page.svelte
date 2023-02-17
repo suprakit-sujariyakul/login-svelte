@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Login from '../lib/Login.svelte';
+	import Login from '../components/Login.svelte';
 	import { onMount } from 'svelte';
 
 	let data: object[] = [],
